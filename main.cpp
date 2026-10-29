@@ -1,17 +1,24 @@
+// Headers for data types, input/ output, and std namespace
 #include <iostream>
 #include <list>
 #include <map>
 #include <iomanip>
+#include <fstream>
 
 using namespace std;
 
-// Headers for data types, input/ output, and std namespace
-
 // function to progress the cycle one stage
+// int for current day, map for sheep map
+void stepDay(int, map);
 // function which reports for under/over feeding/shearing/milking within the map
-// 3 helper functions for above which checks for miscar for an idividual sheep
+void reportDay(int, map);
+// 3 helper functions for above which checks for miscare for an idividual sheep
+int feedSheep(list[3]);
+int milkSheep(list[3]);
+int shearSheep(list[3]);
 
 // Declare map of array[3]s of lists of ints to hold data
+map<string, list<int>[3]>;
 // Read initial data from file into map
 // Data in file will be formated as follows:
 // initial days are all negtaive or 0, because they take place before the simulation begins
@@ -21,6 +28,15 @@ using namespace std;
     // days milked ie. -7, -5, -3, -2, -1
     // repeate previous 4 lines for each sheep
 // data read will be based on getline()
+ifstream inFile("intialSheep.txt");
+if (!inFile.open()) {
+    cout "error, intial data could not be opened\n";
+    return 0;
+}
+
+while (!inFile.eof()) {
+
+}
 
 // decalare 3 functions which takes an array of 3 lists as input and returns an bool
 // bool represents whether sheep should be sheared/milked/fed this day
