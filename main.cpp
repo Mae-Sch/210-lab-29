@@ -1,3 +1,10 @@
+#include <iostream>
+#include <list>
+#include <map>
+#include <iomanip>
+
+using namespace std;
+
 // Headers for data types, input/ output, and std namespace
 
 // function to progress the cycle one stage
