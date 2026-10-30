@@ -42,10 +42,12 @@ int main() {
 // Read initial data from file into map
 // Data in file will be formated as follows:
 // initial days are all negtaive or 0, because they take place before the simulation begins
+// each sheep will be required to have at minimum 4 data points per category. This allows us to have care algorithms which analyzes the pervious 4 instances of care for.
+// due to this, any data more than 4 is technically unused, but it doesn't hurt to have extra data
     // Sheep name
     // days eaten ie. -8 -7 -4 -3 -3
-    // days sheared ie. -8 -4 0
     // days milked ie. -7 -5 -3 -2 -1
+    // days sheared ie. -8 -4 0
     // repeate previous 4 lines for each sheep
 // data read will be based on getline()
     ifstream inFile("intialSheep.txt");
@@ -76,6 +78,10 @@ int main() {
         // report any individual sheep who did not have their needs met
             // determined by const values. ie MAX_FEED_GAP = 2 determines the maxium
             // number of days a sheep can go without food without a shortage repeated
+    for (int day = 1; day < NUM_DAYS; ++day) {
+        stepDay(day, Herd);
+    }
+
 // Output total wasted time (food that was not eaten, over milking, over shearing)
 // give a strong description of the results of our trial
 // end of main function
