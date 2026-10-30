@@ -13,9 +13,18 @@ void stepDay(int, map<string, list<int>[3]>);
 // function which reports for under/over feeding/shearing/milking within the map
 void reportDay(int, map<string, list<int>[3]>);
 // 3 helper functions for above which checks for miscare for an idividual sheep
-int feedSheep(list<int>[3]);
-int milkSheep(list<int>[3]);
-int shearSheep(list<int>[3]);
+int checkSheepFeeding(list<int>[3]);
+int checkSheepMilking(list<int>[3]);
+int checkSheepShearing(list<int>[3]);
+
+// decalare 3 functions which takes an array of 3 lists as input by reference
+// bool represents whether sheep should be sheared/milked/fed this day
+// this functions should be as editable as possible, or have variables determined during runtime
+// this function is what we can very between trials to try different feeding, shearing, and milking algorithsm
+// the three functions each correspond to one of our 3 processes
+void feedSheep(list<int>[3] &);
+void milkSheep(list<int>[3] &);
+void shearSheep(list<int>[3] &);
 
 int main() {
 // Declare map of array[3]s of lists of ints to hold data
@@ -39,12 +48,6 @@ int main() {
         string name;
         getline(cin, name);
     }
-
-// decalare 3 functions which takes an array of 3 lists as input and returns an bool
-// bool represents whether sheep should be sheared/milked/fed this day
-// this functions should be as editable as possible, or have variables determined during runtime
-// this function is what we can very between trials to try different feeding, shearing, and milking algorithsm
-// the three functions each correspond to one of our 3 processes
 
 // decalare a list of ints each for feeding, shearing, and milking
 // each element in the list will represent a day, and the value
